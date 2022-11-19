@@ -1,5 +1,6 @@
 locals {
-  project                = random_string.project.result
-  resource_suffix        = "${local.project}-${var.environment}-${var.region}"
-  global_resource_suffix = "${local.project}-${var.environment}"
+  project                = var.project == null ? random_string.project.result : var.project
+  environment            = terraform.workspace == "default" ? var.environment : terraform.workspace
+  resource_suffix        = "${local.project}-${local.environment}-${var.region}"
+  global_resource_suffix = "${local.project}-${local.environment}"
 }

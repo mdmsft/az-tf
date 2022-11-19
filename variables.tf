@@ -1,3 +1,14 @@
+variable "project" {
+  type     = string
+  default  = null
+  nullable = true
+}
+
+variable "environment" {
+  type    = string
+  default = "dev"
+}
+
 variable "location" {
   type    = string
   default = "westeurope"
@@ -6,11 +17,6 @@ variable "location" {
 variable "region" {
   type    = string
   default = "weu"
-}
-
-variable "environment" {
-  type    = string
-  default = "dev"
 }
 
 variable "tags" {
