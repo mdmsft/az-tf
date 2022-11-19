@@ -1,4 +1,5 @@
 locals {
-  resource_suffix        = "${var.project}-${var.environment}-${var.location.code}"
-  global_resource_suffix = "${var.project}-${var.environment}"
+  project                = random_string.project.result
+  resource_suffix        = "${local.project}-${var.environment}-${var.region}"
+  global_resource_suffix = "${local.project}-${var.environment}"
 }

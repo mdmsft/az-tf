@@ -1,17 +1,11 @@
-variable "project" {
+variable "location" {
   type    = string
-  default = "contoso"
+  default = "westeurope"
 }
 
-variable "location" {
-  type = object({
-    name = string
-    code = string
-  })
-  default = {
-    name = "westeurope"
-    code = "weu"
-  }
+variable "region" {
+  type    = string
+  default = "weu"
 }
 
 variable "environment" {
@@ -19,10 +13,9 @@ variable "environment" {
   default = "dev"
 }
 
-variable "tenant_id" {
-  type = string
-}
-
-variable "subscription_id" {
-  type = string
+variable "tags" {
+  type = map(string)
+  default = {
+    key = ""
+  }
 }
